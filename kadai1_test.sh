@@ -50,11 +50,7 @@ kadai-a() {
 kadai-b() {
     if [ -d kadai-b ]; then
         cp -r kadai-b $dir
-        cp coreutils-8.9.tar.gz $dir
         pushd $dir/kadai-b > /dev/null 2>&1
-
-        export LC_ALL=C
-        tar xf ../coreutils-8.9.tar.gz
 
         if [ ! -f sort.sh ]; then
             warn "kadai-b: Missing 'sort.sh'."
@@ -167,6 +163,8 @@ kadai-f() {
 
         if [ ! -f report.txt ]; then
             warn "kadai-f: Missing report.txt."
+        elif [ `cat report.txt | wc -l` -eq 0 ]; then
+	        warn "kadai-f: 'report.txt' is empty!"
         fi
 
         popd > /dev/null 2>&1
