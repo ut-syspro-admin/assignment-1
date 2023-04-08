@@ -1,17 +1,12 @@
 #!/bin/bash
-# Test code for syspro2018 kadai1
+# Test code for syspro2023 kadai1
 # Written by Shinichi Awamoto
+# Eddited by PENG AO
 
 dir=$(mktemp XXXX -d --tmpdir=/tmp)
 
-pushd $dir > /dev/null 2>&1
-echo "kadai1: Downloading kadai1.tar.gz..."
-wget http://www.pf.is.s.u-tokyo.ac.jp/syspro/static/kadai1.tar.gz
-tar zxvf kadai1.tar.gz > /dev/null 2>&1
-popd > /dev/null 2>&1
-
 echo "#############################################"
-echo "kadai1: Running tests. (v0.0.4)"
+echo "kadai1: Running tests. (v1.0.0)"
 
 if [ -d kadai-a ]; then
     cp -r kadai-a $dir
@@ -53,6 +48,7 @@ fi
 
 if [ -d kadai-b ]; then
     cp -r kadai-b $dir
+    cp coreutils-8.9.tar.gz $dir
     pushd $dir/kadai-b > /dev/null 2>&1
 
     # 課題Bのテスト
