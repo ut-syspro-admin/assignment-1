@@ -6,7 +6,7 @@
 state=0
 warn() { echo $1; state=1; }
 dir=$(mktemp -d XXXX)
-# trap "rm -rf $dir" 0
+trap "rm -rf $dir" 0
 
 kadai-a() {
     if [ -d kadai-a ]; then
