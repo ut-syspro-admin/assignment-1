@@ -182,7 +182,7 @@ if [ -z $1 ] || [ $1 = "d" ]; then kadai-d; fi
 if [ -z $1 ] || [ $1 = "e" ]; then kadai-e; fi
 if [ -z $1 ] || [ $1 = "f" ]; then kadai-f; fi
 if [ $state -eq 0 ]; then
-    echo "All tests have past!"
+    echo "All tests have passed!"
 fi
 echo "#############################################"
 exit $state
