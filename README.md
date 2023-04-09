@@ -9,7 +9,7 @@
 
 ## Assignment
 
-- Slide: [here]() (eccs email required) 
+- Slide: [here]() (ECCS email required) 
 - Date assigned: ***2023/04/10***
 - Date due: ***2023/04/17*** (tentative)
 
@@ -22,7 +22,6 @@
     - Overdue submissions might lead to ***penalty points***.
     - Inexorable reasons are allowed sometimes.
 1. Be active
-    - Complete as many assignment as possible.
+    - Complete as many assignments as possible.
     - ***On-site attendance*** is recommended.
     - ***Communications*** are always beneficial.
-
