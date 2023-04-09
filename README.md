@@ -1,5 +1,7 @@
 # Assignment: 1
 
+Shell Script.
+
 ## Information
 
 - Course: system programming (Mon, 3rd & 4th)
@@ -17,10 +19,12 @@
 
 1. Be executable
     - Make sure that codes can be ***successfully built*** by TA.
+    - Check the ✅ after the final push.
     - Submission might be rejected due to ***deficient files***.
 1. Be punctual
     - Overdue submissions might lead to ***penalty points***.
     - Inexorable reasons are allowed sometimes.
+    - Check [***here***](https://github.com/ut-syspro-admin/assignment-1) for the latest deadline.
 1. Be active
     - Complete as many assignments as possible.
     - ***On-site attendance*** is recommended.
