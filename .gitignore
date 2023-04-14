@@ -3,8 +3,8 @@ kadai-a/kadai-a
 kadai-b/coreutils-*/
 kadai-b/result.txt
 kadai-c/*.pdf*
-# kadai-d
-kadai-e/*.txt
+kadai-d/*.cc
+kadai-e/{cat,strace,all}.txt
 # kadai-f
 
 # Created by https://www.toptal.com/developers/gitignore/api/c
