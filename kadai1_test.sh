@@ -8,6 +8,14 @@ warn() { echo $1; state=1; }
 dir=$(mktemp -d)
 trap "rm -rf $dir" 0
 
+check-report() {
+    if [ ! -f report-$1.txt ]; then
+        $2 "kadai-$1: Missing report-$1.txt."
+    elif [ `cat report-$1.txt | wc -l` -eq 0 ]; then
+        $2 "kadai-$1: 'report-$1.txt' is empty!"
+    fi
+}
+
 kadai-a() {
     if [ -d kadai-a ]; then
         cp -r kadai-a $dir
@@ -41,6 +49,8 @@ kadai-a() {
             warn "kadai-a: Missing '-Wall' option."
         fi
 
+        check-report a warn
+
         popd > /dev/null 2>&1
     else
         warn "kadai-a: No 'kadai-a' directory!"
@@ -63,6 +73,8 @@ kadai-b() {
         elif [ `cat result.txt | wc -l` -eq 0 ]; then
             warn "kadai-b: 'result.txt' is empty!"
         fi
+
+        check-report b warn
 
         popd > /dev/null 2>&1
     else
@@ -89,6 +101,8 @@ kadai-c() {
         elif [ ! -z "`diff $tmpfile 1.pdf`" ]; then
             warn "kadai-c: Is your 1.pdf valid? (detect diff)"
         fi
+
+        check-report c warn
 
         popd > /dev/null 2>&1
     else
@@ -121,6 +135,8 @@ kadai-d() {
             fi
         fi
 
+        check-report d warn
+
         popd > /dev/null 2>&1
     else
         warn "kadai-d: No 'kadai-d' directory!"
@@ -150,6 +166,8 @@ kadai-e() {
             warn "kadai-e: Failed to generate 'all.txt' with '$ ./output.sh'."
         fi
 
+        check-report e warn
+
         popd > /dev/null 2>&1
     else
         warn "kadai-e: No 'kadai-e' directory!"
@@ -161,11 +179,7 @@ kadai-f() {
         cp -r kadai-f $dir
         pushd $dir/kadai-f > /dev/null 2>&1
 
-        if [ ! -f report.txt ]; then
-            warn "kadai-f: Missing report.txt."
-        elif [ `cat report.txt | wc -l` -eq 0 ]; then
-	        warn "kadai-f: 'report.txt' is empty!"
-        fi
+        check-report f warn
 
         popd > /dev/null 2>&1
     else
